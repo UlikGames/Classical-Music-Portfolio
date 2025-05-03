@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.33.2/tagify.css" />
 
-    <!--    
+    <!--
       - primary meta tags
     -->
-    <title>Ulvin Najafov</title>
-    <meta name="title" content="Ulvin Najafov">
-    <meta name="description" content="A custom web music player showcasing my original pieces and arrangements.">
+    <title>Ulvin Najafov – Composer & Pianist   </title>
+    <meta name="title" content="Ulvin Najafov – Composer & Pianist">
+    <meta name="description" content="Music begins where words are powerless.">
 
     <!--
       - favicon
     -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/svg+xml">
 
     <!--
       - google font link
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
     <!--
       - material icon font
     -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25" />
 
     <!--
       - custom css link
@@ -47,8 +47,8 @@
     <div class="top-bar wrapper">
 
         <div class="logo wrapper">
-            <span class="material-symbols-rounded">graphic_eq</span>
-            <h1 class="title-lg">Ulvin Najafov</h1>
+            <img src="./clef.svg" class="treble-icon" alt="Treble Clef" width="24" height="24">
+            <h1 class="title-lg">Ulvin Najafov – Composer & Pianist</h1>
         </div>
 
         <div class="top-bar-actions">
@@ -65,6 +65,7 @@
 
 
     <main>
+
         <article>
 
             <!--
@@ -161,6 +162,9 @@
             -->
 
             <div class="playlist" data-playlist>
+                <div class="category-filter">
+                    <input id="categoryFilter" placeholder="Filter by category..." />
+                </div>
 
                 <ul class="music-list" data-music-list></ul>
 
@@ -195,11 +199,26 @@
         </div>
     </div>
 
-    <button class="help-fab" data-help-btn title="Help">
-        <span class="material-symbols-rounded">help</span>
+    <!-- About Modal -->
+    <div class="about-modal hidden" hidden id="aboutModal">
+        <div class="about-box" tabindex="0">
+            <button class="close-about" aria-label="Close About Popup">&times;</button>
+            <h3>About the Composer</h3>
+            <p>
+                Ulvin Najafov is a contemporary classical composer whose works span from intimate solo piano
+                pieces to dramatic symphonic works. Inspired by Romantic and modern traditions, his music
+                blends emotion, structure, and depth into every phrase.
+            </p>
+        </div>
+    </div>
+
+    <!-- About FAB -->
+    <button class="about-fab" id="aboutBtn" title="About Me">
+        <span class="material-symbols-rounded">person</span>
     </button>
 
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.33.2/tagify.js"></script>
 
 </body>
 

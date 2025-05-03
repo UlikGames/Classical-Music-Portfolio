@@ -177,8 +177,9 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
 }
 
 .title-lg {
-  font-size: var(--title-lg);
-  font-weight: var(--fw-400);
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
 }
 
 .btn-icon {
@@ -203,8 +204,9 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
 }
 
 .headline-sm {
-  font-size: var(--headline-sm);
-  font-weight: var(--fw-400);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
 }
 
 .label-lg,
@@ -245,7 +247,15 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
 
 .logo { gap: 12px; }
 
-
+.treble-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: invert(90%); /* makes it light on dark background */
+    transition: transform 0.2s ease;
+}
+    .treble-icon:hover {
+        transform: scale(1.1) rotate(-5deg);
+    }
 
 
 
@@ -272,6 +282,12 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
   display: grid;
   grid-template-rows: 1fr max-content;
   gap: 24px;
+}
+
+.music-banner img {
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .music-banner {
@@ -406,15 +422,20 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
 }
 
 .music-list {
-  display: grid;
-  gap: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    z-index: 10;
 }
 
 .music-item {
-  position: relative;
-  border-radius: var(--radius-12);
-  background-color: var(--surface-variant);
-  overflow: hidden;
+    position: relative;
+    border-radius: var(--radius-12);
+    background-color: var(--surface-variant);
+    overflow: hidden;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .music-item .item-icon {
@@ -669,27 +690,7 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
   .music-list { gap: 28px; }
 
 }
-.help-fab {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    width: 48px;
-    height: 48px;
-    background-color: #1e1e1e;
-    border: none;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    color: #75d1ff;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1100;
-    transition: background-color 0.2s ease;
-}
 
-.help-fab:hover {
-        background-color: #2e2e2e;
-}
 .shortcut-help {
     position: fixed;
     top: 0;
@@ -737,3 +738,168 @@ body:hover::-webkit-scrollbar-thumb { background-color: var(--surface-variant); 
     display: none !important;
 }
 
+.about-fab {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #75d1ff;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1100;
+    transition: background-color 0.2s ease;
+}
+
+    .about-fab:hover {
+        background-color: #2e2e2e;
+    }
+
+.about-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+}
+
+    .about-modal.hidden {
+        display: none !important;
+    }
+
+.about-box {
+    background: var(--surface-variant);
+    color: var(--on-background);
+    padding: 24px 32px;
+    border-radius: var(--radius-16);
+    max-width: 90%;
+    width: 400px;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-2);
+    position: relative;
+    text-align: center;
+}
+
+    .about-box h3 {
+        margin-bottom: 12px;
+        font-size: 2.2rem;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .about-box p {
+        font-size: 1.4rem;
+        line-height: 1.7;
+    }
+
+.close-about {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    color: var(--on-background);
+    font-size: 2.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+.category-filter {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto 1.5rem;
+}
+
+    .category-filter select {
+        padding: 12px 16px;
+        font-size: 1.4rem;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+    }
+
+.tagify {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #ffffff;
+    border: none;
+    font-size: 1.4rem;
+    min-height: 44px;
+}
+
+.tagify__input {
+    all: unset;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #fff;
+    flex: 1;
+}
+
+    .tagify__input::before {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+.tagify--focus .tagify__input::before {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+    .tagify__input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+.tagify__input::before {
+    transition: opacity 0.2s ease;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tagify--hasTags .tagify__input::before {
+    opacity: 0;
+}
+
+.tagify__tag {
+    background: #75d1ff;
+    color: #000;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 4px 8px;
+}
+
+    .tagify__tag:hover {
+        background: #a2e4ff;
+    }
+
+.tagify__dropdown {
+    background: rgba(20, 20, 20, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.tagify__dropdown__item {
+    padding: 10px 14px;
+    font-size: 1.4rem;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .tagify__dropdown__item--active,
+    .tagify__dropdown__item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+.track-title {
+    display: none!important;
+}
