@@ -351,6 +351,21 @@ const musicData = [
         ]
     },
     {
+        backgroundImage: "./assets/images/poster-41.jpg",
+        posterUrl: "./assets/images/poster-41.jpg",
+        title: "Silenzio in movimento",
+        album: "Silenzio in movimento",
+        year: 2025,
+        artist: "Ulvin Najafov",
+        musicPath: "./assets/music/music-52.mp3",
+        "categories": [
+            "Dramatic",
+            "Slow Movement",
+            "Chamber Strings",
+            "Romantic"
+        ]
+    },
+    {
         backgroundImage: "./assets/images/poster-22.jpg",
         posterUrl: "./assets/images/poster-22.jpg",
         title: "Sinfonia dei Venti, Allegro",
