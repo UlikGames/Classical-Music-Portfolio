@@ -356,7 +356,7 @@ const musicData = [
         title: "Silenzio in movimento",
         album: "Silenzio in movimento",
         year: 2025,
-        artist: "Ulvin Najafov",
+        artist: "Ulvin Najafov, Audrey Maxner, Nicolle Avila, Anna Pavlou, Sarah Thomas, Hanyu Feng, Adam Davis, Amy Tan, Daphne Bickley, Kyle Victor, Zoe Hardel, Patrick Raynard",
         musicPath: "./assets/music/music-52.mp3",
         "categories": [
             "Dramatic",
