@@ -323,6 +323,23 @@ const musicData = [
         ]
     },
     {
+        backgroundImage: "./assets/images/poster-42.jpg",
+        posterUrl: "./assets/images/poster-42.jpg",
+        title: "Profunda Dolor",
+        album: "Profunda Dolor",
+        year: 2025,
+        artist: "Ulvin Najafov",
+        musicPath: "./assets/music/music-53.mp3",
+        "categories": [
+            "Piano Piece",
+            "Chamber Strings",
+            "Violin",
+            "Viola",
+            "Dramatic",
+            "Romantic"
+        ]
+    },
+    {
         backgroundImage: "./assets/images/poster-20.jpg",
         posterUrl: "./assets/images/poster-20.jpg",
         title: "Scherzo - Tarantella",
